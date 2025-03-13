@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>绝地求生安全提示</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            background: url('ruubhtkrlad (1).jpg') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        /* 背景遮罩层 */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0);
+            transition: 0.5s;
+        }
+
+        /* 自定义警告框 */
+        .alert-box {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 400px;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.9);
+            border: 3px solid #ff4444;
+            border-radius: 15px;
+            color: #fff;
+            text-align: center;
+            display: none;
+            z-index: 999;
+            box-shadow: 0 0 30px rgba(255, 68, 68, 0.4);
+        }
+
+        .alert-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #ff4444;
+            text-shadow: 0 0 10px rgba(255, 68, 68, 0.5);
+        }
+
+        .alert-text {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            margin-bottom: 2rem;
+        }
+
+        .confirm-btn {
+            padding: 12px 30px;
+            font-size: 1.2rem;
+            background: #ff4444;
+            border: none;
+            border-radius: 25px;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .confirm-btn:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+    
+    <div class="alert-box" id="alert">
+        <h2 class="alert-title">⚠ 安全警告 ⚠</h2>
+        <p class="alert-text">网络有风险<br>扫码需谨慎！</p>
+        <button class="confirm-btn" onclick="closeAlert()">我知道了</button>
+    </div>
+
+    <script>
+        // 3秒后显示效果
+        setTimeout(() => {
+            document.getElementById('overlay').style.background = 'rgba(0, 0, 0, 0.5)';
+            document.getElementById('alert').style.display = 'block';
+        }, 3000);
+
+        function closeAlert() {
+            document.getElementById('overlay').style.background = 'rgba(0, 0, 0, 0)';
+            document.getElementById('alert').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
